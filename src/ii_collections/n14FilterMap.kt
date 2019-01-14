@@ -1,7 +1,5 @@
 package ii_collections
 
-import java.util.stream.Collectors
-
 fun example1(list: List<Int>) {
 
     // If a lambda has exactly one parameter, that parameter can be accessed as 'it'
@@ -12,7 +10,7 @@ fun example1(list: List<Int>) {
 
 fun Shop.getCitiesCustomersAreFrom(): Set<City> {
     // Return the set of cities the customers are from
-    return this.customers.stream().map { it.city }.collect(Collectors.toSet())
+    return this.customers.map { it.city }.toSet()
 }
 
 fun Shop.getCustomersFrom(city: City): List<Customer> {
