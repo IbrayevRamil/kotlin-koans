@@ -10,18 +10,7 @@ fun test() {
 }
 
 fun todoTask7(client: Client?, message: String?, mailer: Mailer) {
-    /*if (client == null || message == null) return;
-
-        PersonalInfo personalInfo = client.getPersonalInfo();
-        if (personalInfo == null) return;
-
-        String email = personalInfo.getEmail();
-        if (email == null) return;
-
-        mailer.sendMessage(email, message);
-    */
-    val personalInfo: PersonalInfo? = client?.personalInfo
-    val email: String? = personalInfo?.email
+    val email: String? = client?.personalInfo?.email
     if  (email != null && message != null) mailer.sendMessage(email, message)
 }
 
